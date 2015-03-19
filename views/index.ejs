@@ -8,8 +8,15 @@
   </p>
 </form>
 
-<%= students %>
 
+<% students.forEach(function(student){ %>
+  <p>
+    <%= student %>
+    <form action="/remove/<%= student %>/?_method=DELETE" method="POST">
+      <input type="submit", value="X">
+    </form>
+  </p>
+<% }); %>
 
 <p>
   <form action="/remove/?_method=DELETE" method="POST">
